@@ -18,19 +18,19 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     {/* Company Info */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-bold">NextCart</h3>
+                        <h3 className="text-xl font-bold text-cyan-800">NextCart</h3>
                         <p className="text-muted-foreground">
                             Your favorite e-commerce platform for modern shopping experiences.
                         </p>
                         <div className="flex space-x-4">
                             <Button variant="ghost" size="icon">
-                                <FacebookIcon className="h-5 w-5" />
+                                <FacebookIcon className="h-5 w-5 text-cyan-600" />
                             </Button>
                             <Button variant="ghost" size="icon">
-                                <InstagramIcon className="h-5 w-5" />
+                                <InstagramIcon className="h-5 w-5 text-cyan-600" />
                             </Button>
                             <Button variant="ghost" size="icon">
-                                <TwitterIcon className="h-5 w-5" />
+                                <TwitterIcon className="h-5 w-5 text-cyan-600" />
                             </Button>
                         </div>
                     </div>
@@ -100,7 +100,8 @@ export default function Footer() {
                             </p>
                             <div className="flex space-x-2">
                                 <Input placeholder="Your email" />
-                                <Button variant="default">Subscribe</Button>
+                                <Button className="bg-gradient-to-r from-cyan-600 to-green-500 hover:from-cyan-700
+                                hover:to-green-600 transition-all">Subscribe</Button>
                             </div>
                         </CardContent>
                     </Card>

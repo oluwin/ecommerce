@@ -124,3 +124,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+/*@layer utilities {*/
+/*  .bg-zinc-bg {*/
+/*    background-image: url('/product-listings/zinc-bg.jpg'); !* Updated path *!*/
+/*  }*/
+/*}*/
