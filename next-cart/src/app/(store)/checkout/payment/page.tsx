@@ -10,10 +10,31 @@ import {ValidatedInput, ExpiryDatePicker} from '@/components/components/forms'
 import { useRouter } from 'next/navigation'
 import {paymentSchema} from "@/components/lib/schemas";
 import {format} from "date-fns";
+import {useCartStore} from "@/components/stores/cart-store";
+import {useEffect} from "react";
 
 export default function PaymentPage() {
     const { setData, setCurrentStep } = useCheckout()
     const router = useRouter()
+    const isEmpty = useCartStore(state => state.isEmpty())
+
+    useEffect(() => {
+        if (isEmpty) {
+            router.push('/cart')
+        }
+    }, [isEmpty, router])
+
+    if (isEmpty) {
+        return (
+            <div className="max-w-2xl mx-auto text-center py-12">
+                <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
+                <p className="mb-6">Please add items to your cart before proceeding to payment</p>
+                <Button onClick={() => router.push('/products')}>
+                    Continue Shopping
+                </Button>
+            </div>
+        )
+    }
 
     const form = useForm<z.infer<typeof paymentSchema>>({
         resolver: zodResolver(paymentSchema),

@@ -85,7 +85,8 @@ export default function ReviewPage() {
                         <Button variant="outline" onClick={handleEdit}>
                             Edit Payment
                         </Button>
-                        <Button onClick={handleSubmit}>Place Order</Button>
+                        <Button className="bg-gradient-to-r from-cyan-600 to-green-500 hover:from-cyan-700
+                                hover:to-green-600 transition-all" onClick={handleSubmit}>Place Order</Button>
                     </div>
                 </CardContent>
             </Card>

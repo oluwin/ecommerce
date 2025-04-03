@@ -1,25 +1,31 @@
-// middleware.ts
-import {auth} from "@/components/auth/auth";
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
+import {dummyAuth} from "@/components/lib/auth";
 
 
-export default auth(async (req: { auth: any; nextUrl: { pathname: string; }; url: string | URL | undefined; }) => {
-    const isLoggedIn = !!req.auth;
-    const isAuthPage = req.nextUrl.pathname.startsWith("/login");
+const publicRoutes = ['/login', '/register', '/'];
+const protectedRoutes = ['/products', '/category', '/checkout', '/cart'];
+
+export default function middleware(req: { nextUrl: { pathname: any; }; url: string | URL | undefined; }) {
+    const pathname = req.nextUrl.pathname;
+    const isPublic = publicRoutes.some(route => pathname.startsWith(route));
+    const isProtected = protectedRoutes.some(route => pathname.startsWith(route));
+    const isLoggedIn = dummyAuth.isAuthenticated();
 
     // Redirect logged-in users away from auth pages
-    if (isAuthPage && isLoggedIn) {
-        return NextResponse.redirect(new URL("/dashboard", req.url));
+    if (isPublic && isLoggedIn && pathname !== '/') {
+        return NextResponse.redirect(new URL('/', req.url));
     }
 
-    // Protect all routes except public ones
-    if (!isLoggedIn && !isAuthPage) {
-        return NextResponse.redirect(new URL("/login", req.url));
+    // Redirect unauthenticated users from protected routes
+    if (isProtected && !isLoggedIn) {
+        return NextResponse.redirect(
+            new URL(`/login?redirect=${encodeURIComponent(pathname)}`, req.url)
+        );
     }
 
     return NextResponse.next();
-});
+}
 
 export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"]
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };

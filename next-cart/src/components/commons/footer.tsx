@@ -11,9 +11,9 @@ import { Separator } from "@/components/components/ui/separator"
 import { Input } from "@/components/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/components/ui/card"
 
-export default function Footer() {
+export function Footer() {
     return (
-        <footer className="bg-background border-t">
+        <footer className="bg-background border-t mt-auto">
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     {/* Company Info */}

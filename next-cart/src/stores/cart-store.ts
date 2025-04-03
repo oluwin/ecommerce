@@ -15,11 +15,12 @@ type CartStore = {
     removeItem: (id: string) => void
     updateQuantity: (id: string, quantity: number) => void
     clearCart: () => void
+    isEmpty: () => boolean
 }
 
 export const useCartStore = create<CartStore>()(
     persist(
-        (set) => ({
+        (set,get) => ({
             items: [],
             addItem: (item) =>
                 set((state) => {
@@ -44,6 +45,7 @@ export const useCartStore = create<CartStore>()(
                     ),
                 })),
             clearCart: () => set({ items: [] }),
+            isEmpty: () => get().items.length === 0,
         }),
         {
             name: 'cart-storage',

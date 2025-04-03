@@ -8,6 +8,8 @@ import { Button } from '@/components/components/ui/button'
 import { Form } from '@/components/components/ui/form'
 import { ValidatedInput } from '@/components/components/forms'
 import { useRouter } from 'next/navigation'
+import {useCartStore} from "@/components/stores/cart-store";
+import {useEffect} from "react";
 
 const shippingSchema = z.object({
     fullName: z.string().min(2, "Minimum 2 characters"),
@@ -20,6 +22,14 @@ const shippingSchema = z.object({
 export default function ShippingPage() {
     const { setData, setCurrentStep } = useCheckout()
     const router = useRouter()
+    const isEmpty = useCartStore(state => state.isEmpty())
+
+    // Redirect if cart is empty
+    useEffect(() => {
+        if (isEmpty) {
+            router.push('/cart')
+        }
+    }, [isEmpty, router])
 
     const form = useForm<z.infer<typeof shippingSchema>>({
         resolver: zodResolver(shippingSchema),
@@ -28,9 +38,21 @@ export default function ShippingPage() {
             address: '',
             city: '',
             postalCode: '',
-            country: 'US' // Default value
+            country: 'US'
         }
     })
+
+    if (isEmpty) {
+        return (
+            <div className="max-w-2xl mx-auto text-center py-12">
+                <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
+                <p className="mb-6">Please add items to your cart before proceeding to checkout</p>
+                <Button onClick={() => router.push('/products')}>
+                    Continue Shopping
+                </Button>
+            </div>
+        )
+    }
 
     const onSubmit = (values: z.infer<typeof shippingSchema>) => {
         setData(prev => ({ ...prev, shipping: values }))
