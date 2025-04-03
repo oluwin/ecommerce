@@ -1,0 +1,69 @@
+type DummyUser = {
+    username: string;
+    password: string;
+};
+
+
+// Mock database with one test user
+let dummyUsers: DummyUser[] = [
+    { username: 'demouser', password: 'demou' } // Pre-defined test user
+];
+
+
+export const dummyAuth = {
+    register: (username: string, password: string) => {
+        if (username.length < 8) throw new Error("Username must be ≥8 characters");
+        if (password !== username.substring(0, 5)) {
+            throw new Error("Password must match first 5 chars of username");
+        }
+
+        dummyUsers.push({ username, password });
+        sessionStorage.setItem('dummyAuth', JSON.stringify({ username }));
+        return true;
+    },
+
+    login: (username: string, password: string) => {
+        // Auto-create user if none exists (for testing)
+        if (dummyUsers.length === 0) {
+            if (username.length < 8) {
+                throw new Error("Username must be ≥8 characters");
+            }
+            const expectedPassword = username.substring(0, 5);
+            dummyUsers.push({ username, password: expectedPassword });
+        }
+
+        const user = dummyUsers.find(u => u.username === username);
+        if (!user) return false;
+
+        // For testing: Accept if password matches first 5 chars OR exact test user password
+        const isValidPassword = (
+            password === user.password ||
+            password === username.substring(0, 5)
+        );
+
+        if (!isValidPassword) return false;
+
+        sessionStorage.setItem('dummyAuth', JSON.stringify({ username }));
+        return true;
+    },
+
+    logout: () => {
+        sessionStorage.removeItem('dummyAuth');
+    },
+
+    isAuthenticated: () => {
+        if (typeof window === 'undefined') return false;
+        return !!sessionStorage.getItem('dummyAuth');
+    },
+
+    currentUser: () => {
+        if (typeof window === 'undefined') return null;
+        const auth = sessionStorage.getItem('dummyAuth');
+        return auth ? JSON.parse(auth) : null;
+    },
+
+    // Optional: Clear test users (for testing different scenarios)
+    clearTestUsers: () => {
+        dummyUsers = [];
+    }
+};

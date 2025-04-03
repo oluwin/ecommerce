@@ -15,3 +15,23 @@ export interface ProductListing {
     page: number
     limit: number
 }
+
+export interface PageBackground {
+    id: string
+    name: string
+    image: string
+}
+
+export interface Category  {
+    id: string
+    name: string
+    slug: string
+    count: number
+    subcategories?: Category[]
+}
+
+export interface Subcategory  {
+    id: string
+    name: string
+    slug: string
+}
