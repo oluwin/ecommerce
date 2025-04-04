@@ -33,7 +33,7 @@ export function Header() {
 
     const handleLogout = () => {
         logout()
-        router.push('/')
+        router.push('/login')
         toast.success('You have been logged out')
         setMobileMenuOpen(false)
     }

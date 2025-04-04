@@ -1,10 +1,10 @@
 import type {Metadata} from "next"
 import {Geist, Geist_Mono} from "next/font/google"
 import "./globals.css"
-import {CategoriesSidebar, ThemeProvider} from "@/components/components/commons"
 import {ToastProvider} from "@/components/components/toaster"
-import {Header, Footer} from "@/components/components/commons"
 import {AuthProvider} from "@/components/providers/auth-provider";
+import {ThemeProvider} from "@/components/components/commons";
+
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -29,30 +29,15 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
         <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen`}>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-        >
-            <Header/>
 
-            <div className="flex flex-1">
-                <div className="hidden md:block sticky top-16 h-[calc(100vh-64px)] overflow-y-auto border-r">
-                    <CategoriesSidebar/>
-                </div>
-
-                {/* Main content area */}
-                <main className="flex-1 p-2">
-                    <AuthProvider>
-                        {children}
-                    </AuthProvider>
-                </main>
-            </div>
-
-            <Footer/>
+            {/* Main content area */}
+            <main className="flex-1">
+                <AuthProvider>
+                    {children}
+                </AuthProvider>
+            </main>
             <ToastProvider/>
-        </ThemeProvider>
+
         </body>
         </html>
     )

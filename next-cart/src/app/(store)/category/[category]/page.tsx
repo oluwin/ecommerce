@@ -20,15 +20,21 @@ export default function CategoryPage() {
         sc => slugify(sc.name) === subcategorySlug
     )
 
-    // Filter products based on category/subcategory IDs
+    // Filter products based on category/subcategory
     const filteredProducts = mockProducts.filter(product => {
         if (subcategorySlug && currentSubcategory) {
-            // For subcategory pages
-            return product.category === currentSubcategory.id
+            // For subcategory pages - match either category name or subcategory name
+            return product.category === currentSubcategory.name ||
+                product.category === currentSubcategory.slug
         } else if (currentCategory) {
-            // For category pages (include all subcategory products)
-            return product.category === currentCategory.id ||
-                currentCategory.subcategories?.some(sc => sc.id === product.category)
+            // For category pages - match category name or any of its subcategories
+            const subcategoryNames = currentCategory.subcategories?.map(sc => sc.name) || []
+            const subcategorySlugs = currentCategory.subcategories?.map(sc => sc.slug) || []
+
+            return product.category === currentCategory.name ||
+                product.category === currentCategory.slug ||
+                subcategoryNames.includes(product.category) ||
+                subcategorySlugs.includes(product.category)
         }
         return false
     })
@@ -45,11 +51,17 @@ export default function CategoryPage() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {filteredProducts.map(product => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </div>
+                {filteredProducts.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {filteredProducts.map(product => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="text-center py-12">
+                        <p className="text-gray-500">No products found in this category</p>
+                    </div>
+                )}
             </main>
         </div>
     )

@@ -31,35 +31,7 @@ export const categories: Category[] = [
         id: "5",
         name: "Security Systems",
         slug: "security-systems",
-        count: 50,
-        subcategories: [
-            {
-                id: "6",
-                name: "Surveillance Cameras",
-                slug: "surveillance-cameras",
-                count: 20,
-                subcategories: [
-                    {
-                        id: "7",
-                        name: "Indoor Cameras",
-                        slug: "indoor-cameras",
-                        count: 10
-                    },
-                    {
-                        id: "8",
-                        name: "Outdoor Cameras",
-                        slug: "outdoor-cameras",
-                        count: 10
-                    }
-                ]
-            },
-            {
-                id: "9",
-                name: "Access Control Systems",
-                slug: "access-control-systems",
-                count: 30
-            }
-        ]
+        count: 50
     },
     {
         id: "10",
@@ -84,26 +56,6 @@ export const categories: Category[] = [
                 name: "Gas Meters",
                 slug: "gas-meters",
                 count: 25
-            },
-        ]
-    },
-    {
-        id: "14",
-        name: "Furniture",
-        slug: "furniture",
-        count: 90,
-        subcategories: [
-            {
-                id: "15",
-                name: "Living Room Furniture",
-                slug: "living-room-furniture",
-                count: 50
-            },
-            {
-                id: "16",
-                name: "Bedroom Furniture",
-                slug: "bedroom-furniture",
-                count: 40
             }
         ]
     },
@@ -111,61 +63,7 @@ export const categories: Category[] = [
         id: "17",
         name: "Clothing",
         slug: "clothing",
-        count: 200,
-        subcategories: [
-            {
-                id: "18",
-                name: "Men's Wear",
-                slug: "mens-wear",
-                count: 100
-            },
-            {
-                id: "19",
-                name: "Women's Wear",
-                slug: "womens-wear",
-                count: 100
-            }
-        ]
-    },
-    {
-        id: "20",
-        name: "Toys",
-        slug: "toys",
-        count: 60,
-        subcategories: [
-            {
-                id: "21",
-                name: "Educational Toys",
-                slug: "educational-toys",
-                count: 30
-            },
-            {
-                id: "22",
-                name: "Outdoor Toys",
-                slug: "outdoor-toys",
-                count: 30
-            }
-        ]
-    },
-    {
-        id: "23",
-        name: "Books",
-        slug: "books",
-        count: 150,
-        subcategories: [
-            {
-                id: "24",
-                name: "Fiction",
-                slug: "fiction",
-                count: 75
-            },
-            {
-                id: "25",
-                name: "Non-Fiction",
-                slug: "non-fiction",
-                count: 75
-            }
-        ]
+        count: 200
     },
     {
         id: "26",
@@ -188,23 +86,39 @@ export const categories: Category[] = [
         ]
     },
     {
-        id: "29",
-        name: "Pet Supplies",
-        slug: "pet-supplies",
-        count: 70,
-        subcategories: [
-            {
-                id: "30",
-                name: "Dog Supplies",
-                slug: "dog-supplies",
-                count: 40
-            },
-            {
-                id: "31",
-                name: "Cat Supplies",
-                slug: "cat-supplies",
-                count: 30
-            }
-        ]
-    }
+        id: "32",
+        name: "Construction Materials",
+        slug: "construction-materials",
+        count: 75
+    },
+    {
+        id: "33",
+        name: "Electrical Equipment",
+        slug: "electrical-equipment",
+        count: 60
+    },
+    {
+        id: "34",
+        name: "Safety Equipment",
+        slug: "safety-equipment",
+        count: 45
+    },
+    {
+        id: "35",
+        name: "Communication Devices",
+        slug: "communication-devices",
+        count: 55
+    },
+    {
+        id: "36",
+        name: "Sports",
+        slug: "sports",
+        count: 84
+    },
+    {
+        id: "37",
+        name: "Accessories",
+        slug: "accessories",
+        count: 105
+    },
 ];

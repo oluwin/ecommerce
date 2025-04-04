@@ -3,7 +3,7 @@ import {dummyAuth} from "@/components/lib/auth";
 
 
 const publicRoutes = ['/login', '/register', '/'];
-const protectedRoutes = ['/products', '/category', '/checkout', '/cart'];
+const protectedRoutes = ['/dashboard', '/products','/category', '/checkout', '/cart'];
 
 export default function middleware(req: { nextUrl: { pathname: any; }; url: string | URL | undefined; }) {
     const pathname = req.nextUrl.pathname;
@@ -13,7 +13,7 @@ export default function middleware(req: { nextUrl: { pathname: any; }; url: stri
 
     // Redirect logged-in users away from auth pages
     if (isPublic && isLoggedIn && pathname !== '/') {
-        return NextResponse.redirect(new URL('/', req.url));
+        return NextResponse.redirect(new URL('/dashboard', req.url))
     }
 
     // Redirect unauthenticated users from protected routes
