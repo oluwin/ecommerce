@@ -6,15 +6,15 @@ type DummyUser = {
 
 // Mock database with one test user
 let dummyUsers: DummyUser[] = [
-    { username: 'demouser', password: 'demou' } // Pre-defined test user
+    // { username: 'demouser', password: 'demou' } // Pre-defined test user
 ];
 
 
 export const dummyAuth = {
     register: (username: string, password: string) => {
         if (username.length < 8) throw new Error("Username must be ≥8 characters");
-        if (password !== username.substring(0, 5)) {
-            throw new Error("Password must match first 5 chars of username");
+        if (password !== username.substring(0, 5)+ '@123') {
+            throw new Error("Password must match first 5 chars of username + '@123'");
         }
 
         dummyUsers.push({ username, password });
@@ -26,19 +26,24 @@ export const dummyAuth = {
         // Auto-create user if none exists (for testing)
         if (dummyUsers.length === 0) {
             if (username.length < 8) {
-                throw new Error("Username must be ≥8 characters");
+                throw new Error("Username must be ≥ 8 characters");
             }
-            const expectedPassword = username.substring(0, 5);
+            const expectedPassword = username.substring(0, 5)+'@123';
+
+            console.log("Password = "+expectedPassword);
+
             dummyUsers.push({ username, password: expectedPassword });
         }
+
+
 
         const user = dummyUsers.find(u => u.username === username);
         if (!user) return false;
 
-        // For testing: Accept if password matches first 5 chars OR exact test user password
+        // For testing: Accept if password matches first 5 chars +'@123' OR exact test user password
         const isValidPassword = (
             password === user.password ||
-            password === username.substring(0, 5)
+            password === username.substring(0, 5)+'@123'
         );
 
         if (!isValidPassword) return false;
