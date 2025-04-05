@@ -22,15 +22,15 @@ export interface PageBackground {
     image: string
 }
 
-export interface Category  {
+export interface Category {
     id: string
     name: string
     slug: string
     count: number
-    subcategories?: Category[]
+    subcategories?: Subcategory[]
 }
 
-export interface Subcategory  {
+export interface Subcategory {
     id: string
     name: string
     slug: string

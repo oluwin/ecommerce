@@ -17,13 +17,11 @@ export const categories: Category[] = [
                 id: "3",
                 name: "Kitchen Appliances",
                 slug: "kitchen-appliances",
-                count: 35
             },
             {
                 id: "4",
                 name: "Cleaning Appliances",
                 slug: "cleaning-appliances",
-                count: 45
             }
         ]
     },
@@ -34,91 +32,69 @@ export const categories: Category[] = [
         count: 50
     },
     {
-        id: "10",
+        id: "6",
         name: "Metering Solutions",
         slug: "metering-solutions",
         count: 100,
-        subcategories: [
-            {
-                id: "11",
-                name: "Smart Meters",
-                slug: "smart-meters",
-                count: 40
-            },
-            {
-                id: "12",
-                name: "Water Meters",
-                slug: "water-meters",
-                count: 30
-            },
-            {
-                id: "13",
-                name: "Gas Meters",
-                slug: "gas-meters",
-                count: 25
-            }
-        ]
     },
     {
-        id: "17",
+        id: "7",
         name: "Clothing",
         slug: "clothing",
         count: 200
     },
     {
-        id: "26",
+        id: "8",
         name: "Health & Beauty",
         slug: "health-beauty",
         count: 110,
         subcategories: [
             {
-                id: "27",
+                id: "9",
                 name: "Skincare",
                 slug: "skincare",
-                count: 60
             },
             {
-                id: "28",
+                id: "10",
                 name: "Makeup",
                 slug: "makeup",
-                count: 50
             }
         ]
     },
     {
-        id: "32",
+        id: "11",
         name: "Construction Materials",
         slug: "construction-materials",
         count: 75
     },
     {
-        id: "33",
+        id: "12",
         name: "Electrical Equipment",
         slug: "electrical-equipment",
         count: 60
     },
     {
-        id: "34",
+        id: "13",
         name: "Safety Equipment",
         slug: "safety-equipment",
         count: 45
     },
     {
-        id: "35",
+        id: "14",
         name: "Communication Devices",
         slug: "communication-devices",
         count: 55
     },
     {
-        id: "36",
+        id: "15",
         name: "Sports",
         slug: "sports",
         count: 84
     },
     {
-        id: "37",
+        id: "16",
         name: "Accessories",
         slug: "accessories",
         count: 105
-    },
+    }
 ];

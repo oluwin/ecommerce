@@ -62,7 +62,7 @@ export default function SuccessPage() {
 
                 <div className="bg-gray-50 p-4 rounded-md mb-8">
                     <p className="text-gray-700">
-                        Payment method: Card ending in {data.payment.card?.number.slice(-4)}
+                        Payment method: Card ending in {data.payment?.card?.number.slice(-4)}
                     </p>
                     <p className="text-gray-700 mt-2">
                         Order total: ₦{totalPrice?.toLocaleString()}
