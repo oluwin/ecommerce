@@ -7,6 +7,7 @@ import {useCart} from "@/components/utils/useCart";
 import {Card, CardContent} from "@/components/components/ui/card";
 import {Button} from "@/components/components/ui/button";
 
+
 export default function ProductDetails({ product }: { product: Product }) {
     const { addItem } = useCart()
 
@@ -18,14 +19,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 price: product.price,
                 image: product.image,
                 quantity: 1
-            })
-            toast.success(`${product.name} added to cart`, {
-                style: {
-                    background: 'linear-gradient(45deg, #4f0092 10%, #9cffa1 50%, #30cdff 90%)',
-                    color: 'white',
-                    border: 'none'
-                }
-            })
+            })           
         } catch (error) {
             toast.error('Failed to add item to cart')
         }
@@ -33,6 +27,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 
     return (
         <div className="max-w-4xl mx-auto">
+           
             <Card className="border-0 shadow-none">
                 <div className="grid md:grid-cols-2 gap-8">
                     {/* Product Image */}
@@ -87,6 +82,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                     </div>
                 </div>
             </Card>
+           
         </div>
     )
 }

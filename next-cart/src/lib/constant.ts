@@ -9,7 +9,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/headphone-03.png',
         category: 'Electronics',
         rating: 4.5,
-        reviews: 120,
+        reviews: 120
     },
     {
         id: '2',
@@ -19,7 +19,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/smart-watch.png',
         category: 'Electronics',
         rating: 4.2,
-        reviews: 85,
+        reviews: 85
     },
     {
         id: '3',
@@ -29,7 +29,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/running-shoes.png',
         category: 'Sports',
         rating: 4.7,
-        reviews: 210,
+        reviews: 210
     },
     {
         id: '4',
@@ -39,7 +39,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/back-pack-1.png',
         category: 'Accessories',
         rating: 4.3,
-        reviews: 50,
+        reviews: 50
     },
     {
         id: '5',
@@ -49,7 +49,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/fan-03.png',
         category: 'Home Appliances',
         rating: 4.1,
-        reviews: 30,
+        reviews: 30
     },
     {
         id: '6',
@@ -59,7 +59,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/fitted-shirt-03.png',
         category: 'Clothing',
         rating: 4.4,
-        reviews: 60,
+        reviews: 60
     },
     {
         id: '7',
@@ -69,7 +69,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/headphone-02.png',
         category: 'Electronics',
         rating: 4.3,
-        reviews: 90,
+        reviews: 90
     },
     {
         id: '8',
@@ -79,7 +79,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/iPhone-02.png',
         category: 'Electronics',
         rating: 4.8,
-        reviews: 500,
+        reviews: 500
     },
     {
         id: '9',
@@ -89,7 +89,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/polo-shirt-01.png',
         category: 'Clothing',
         rating: 4.2,
-        reviews: 40,
+        reviews: 40
     },
     {
         id: '10',
@@ -99,7 +99,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/laptop-alienware.png',
         category: 'Electronics',
         rating: 4.9,
-        reviews: 200,
+        reviews: 200
     },
     {
         id: '11',
@@ -109,7 +109,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/laptop-lenovo.png',
         category: 'Electronics',
         rating: 4.4,
-        reviews: 150,
+        reviews: 150
     },
     {
         id: '12',
@@ -119,7 +119,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/freezer-samsung-standing.png',
         category: 'Home Appliances',
         rating: 4.6,
-        reviews: 100,
+        reviews: 100
     },
     {
         id: '13',
@@ -129,7 +129,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/laptop-hp.png',
         category: 'Electronics',
         rating: 4.3,
-        reviews: 120,
+        reviews: 120
     },
     {
         id: '14',
@@ -139,7 +139,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/samsung-02.png',
         category: 'Electronics',
         rating: 4.7,
-        reviews: 300,
+        reviews: 300
     },
     {
         id: '15',
@@ -149,7 +149,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/t-shirt-pack.png',
         category: 'Clothing',
         rating: 4.5,
-        reviews: 80,
+        reviews: 80
     },
     {
         id: '16',
@@ -159,7 +159,7 @@ export const mockProducts: Product[] = [
         image: '/images/product-listings/blender.png',
         category: 'Home Appliances',
         rating: 4.0,
-        reviews: 367,
+        reviews: 367
     },
     {
         id: '17',
@@ -169,7 +169,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/armored-glass.png',
         category: 'Security Systems',
         rating: 4.0,
-        reviews: 367,
+        reviews: 367
     },
     {
         id: '18',
@@ -179,7 +179,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/iron-sheet.png',
         category: 'Construction Materials',
         rating: 4.2,
-        reviews: 45,
+        reviews: 45
     },
     {
         id: '19',
@@ -189,17 +189,17 @@ export const mockProducts: Product[] = [
         image: '/images/assets/anti-riot-shield.png',
         category: 'Security Systems',
         rating: 4.6,
-        reviews: 28,
+        reviews: 28
     },
     {
         id: '20',
         name: '3-Phase Meter',
         description: 'Advanced 3-phase electricity meter for industrial/commercial use',
         price: 89999.99,
-        image: '/images/product-listings/3ph-meter.png',
+        image: '/images/assets/3ph-meter.png',
         category: 'Metering Solutions',
         rating: 4.7,
-        reviews: 63,
+        reviews: 63
     },
     {
         id: '21',
@@ -209,7 +209,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/pcb.png',
         category: 'Electronics',
         rating: 4.4,
-        reviews: 87,
+        reviews: 87
     },
     {
         id: '22',
@@ -219,7 +219,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/40ft-multipurpose-galvanized-pole.png',
         category: 'Construction Materials',
         rating: 4.3,
-        reviews: 32,
+        reviews: 32
     },
     {
         id: '23',
@@ -229,7 +229,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/250kva-transformer.png',
         category: 'Electrical Equipment',
         rating: 4.8,
-        reviews: 15,
+        reviews: 15
     },
     {
         id: '24',
@@ -239,7 +239,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/uiu.png',
         category: 'Metering Solutions',
         rating: 4.5,
-        reviews: 42,
+        reviews: 42
     },
     {
         id: '25',
@@ -249,7 +249,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/electrical-panel.png',
         category: 'Electrical Equipment',
         rating: 4.6,
-        reviews: 38,
+        reviews: 38
     },
     {
         id: '26',
@@ -259,7 +259,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/bluetooth-helmet.png',
         category: 'Safety Equipment',
         rating: 4.4,
-        reviews: 56,
+        reviews: 56
     },
     {
         id: '27',
@@ -269,7 +269,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/metal-anti-riot-shield.png',
         category: 'Security Systems',
         rating: 4.7,
-        reviews: 19,
+        reviews: 19
     },
     {
         id: '28',
@@ -279,7 +279,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/1ph-meter.png',
         category: 'Metering Solutions',
         rating: 4.3,
-        reviews: 94,
+        reviews: 94
     },
     {
         id: '29',
@@ -289,7 +289,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/metal-detector.png',
         category: 'Security Systems',
         rating: 4.5,
-        reviews: 47,
+        reviews: 47
     },
     {
         id: '30',
@@ -299,7 +299,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/tactical-vest.png',
         category: 'Security Systems',
         rating: 4.8,
-        reviews: 62,
+        reviews: 62
     },
     {
         id: '31',
@@ -309,7 +309,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/tactical-radio-pouch.png',
         category: 'Security Systems',
         rating: 4.2,
-        reviews: 34,
+        reviews: 34
     },
     {
         id: '32',
@@ -319,7 +319,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/trunk-pipes.png',
         category: 'Construction Materials',
         rating: 4.1,
-        reviews: 27,
+        reviews: 27
     },
     {
         id: '33',
@@ -329,7 +329,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/security-umbrella.png',
         category: 'Security Systems',
         rating: 4.3,
-        reviews: 41,
+        reviews: 41
     },
     {
         id: '34',
@@ -339,7 +339,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/combat-tactical-gloves.png',
         category: 'Security Systems',
         rating: 4.6,
-        reviews: 58,
+        reviews: 58
     },
     {
         id: '35',
@@ -349,7 +349,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/tactical-belt.png',
         category: 'Security Systems',
         rating: 4.5,
-        reviews: 49,
+        reviews: 49
     },
     {
         id: '36',
@@ -359,7 +359,7 @@ export const mockProducts: Product[] = [
         image: '/images/assets/walkie-talkie.png',
         category: 'Communication Devices',
         rating: 4.4,
-        reviews: 73,
+        reviews: 73
     }
 
     // Add more products as needed

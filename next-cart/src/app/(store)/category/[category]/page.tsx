@@ -3,8 +3,12 @@
 import { useParams } from 'next/navigation'
 import { mockProducts } from '@/components/lib/constant'
 import { categories } from '@/components/lib/categories'
-import ProductCard from "@/components/components/commons/product-card"
 import { slugify } from '@/components/lib/utils'
+import { Suspense } from 'react'
+import React from 'react'
+
+// Dynamically import ProductCard with Suspense
+const ProductCard = React.lazy(() => import('@/components/components/commons/product-card'))
 
 export default function CategoryPage() {
     const { category: categorySlug } = useParams()
@@ -51,17 +55,20 @@ export default function CategoryPage() {
                     </p>
                 </div>
 
-                {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {filteredProducts.map(product => (
-                            <ProductCard key={product.id} product={product} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-12">
-                        <p className="text-gray-500">No products found in this category</p>
-                    </div>
-                )}
+                {/* Wrap with Suspense if dynamically loading ProductCard */}
+                <Suspense fallback={<div>Loading products...</div>}>
+                    {filteredProducts.length > 0 ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            {filteredProducts.map(product => (
+                                <ProductCard key={product.id} product={product} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-12">
+                            <p className="text-gray-500">No products found in this category</p>
+                        </div>
+                    )}
+                </Suspense>
             </main>
         </div>
     )
